@@ -95,8 +95,8 @@ class AudioService {
       await _player.setAsset(_audioAsset);
 
       // Verify duration is valid
-      final duration = await _player.durationFuture;
-      if (duration == null || duration.inMilliseconds <= 0) {
+      final duration = _player.duration;
+      if (duration != null && duration.inMilliseconds <= 0) {
         _logger.e('Audio asset loaded but has invalid duration: $duration');
         return false;
       }

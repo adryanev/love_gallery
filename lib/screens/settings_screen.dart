@@ -99,7 +99,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
           Switch(
             value: value,
             onChanged: onChanged,
-            activeColor: AppTheme.dustyMauve,
+            activeThumbColor: AppTheme.dustyMauve,
           ),
         ],
       ),
@@ -168,10 +168,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
       final file = File(logFilePath);
       if (await file.exists()) {
-        await Share.shareXFiles(
-          [XFile(logFilePath)],
-          subject: 'Love Gallery Logs',
-          text: 'Love Gallery application logs for troubleshooting',
+        await SharePlus.instance.share(
+          ShareParams(
+            files: [XFile(logFilePath)],
+            subject: 'Love Gallery Logs',
+            text: 'Love Gallery application logs for troubleshooting',
+          ),
         );
         _logger.i('Logs shared successfully');
       } else {

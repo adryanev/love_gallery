@@ -5,7 +5,6 @@ import 'package:love_gallery/core/theme/app_theme.dart';
 import 'package:love_gallery/screens/home_screen.dart';
 import 'package:love_gallery/core/services/firebase_service.dart';
 import 'package:love_gallery/core/services/service_locator.dart';
-import 'package:love_gallery/services/audio_service.dart';
 
 // This is to handle missing assets during development
 class ImageUtils {

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:love_gallery/services/audio_service.dart';
 
 class AudioControl extends StatefulWidget {
-  const AudioControl({Key? key}) : super(key: key);
+  const AudioControl({super.key});
 
   @override
   State<AudioControl> createState() => _AudioControlState();
@@ -69,7 +69,7 @@ class _AudioControlState extends State<AudioControl> {
       child: Container(
         padding: const EdgeInsets.all(8),
         decoration: BoxDecoration(
-          color: Colors.white.withOpacity(0.3),
+          color: Colors.white.withValues(alpha: 0.3),
           borderRadius: BorderRadius.circular(20),
         ),
         child: Icon(
